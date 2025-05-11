@@ -1,65 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        body {
-            background-color: #0d0d0d;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 4rem;
-            font-weight: bold;
-        }
-        p {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-        .links {
-            margin-top: 20px;
-        }
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 24px;
-            text-decoration: none;
-            color: #fff;
-            background: #1a1a1a;
-            border: 2px solid #fff;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .links a:hover {
-            background: #fff;
-            color: #0d0d0d;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechTuts - Simplified Tech Tutorials</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fefae0;
+      --text-color: #023047;
+      --header-bg: #2a9d8f;
+      --nav-bg: #264653;
+      --dropdown-bg: #2a9d8f;
+      --hover-bg: #219ebc;
+      --card-bg: white;
+    }
+
+    body.dark-mode {
+      --bg-color: #023047;
+      --text-color: #fefae0;
+      --header-bg: #264653;
+      --nav-bg: #2a9d8f;
+      --dropdown-bg: #264653;
+      --hover-bg: #219ebc;
+      --card-bg: #2a9d8f;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: var(--nav-bg);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--dropdown-bg);
+      min-width: 200px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      padding: 12px 16px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: var(--hover-bg);
+      color: white;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      margin-top: 0;
+      color: var(--text-color);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: var(--header-bg);
+      color: white;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #219ebc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, I'm an IT Professional</h1>
-        <p>Showcasing my projects, experience, and expertise.</p>
-        <div class="links">
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark-mode')">Toggle Mode</button>
+
+  <header>
+    <h1>TechTuts</h1>
+    <p>Simplified Tech Tutorials for Beginners in IT & Support</p>
+  </header>
+
+  <nav>
+    <div class="dropdown">
+      <a href="#networking">Networking</a>
+      <div class="dropdown-content">
+        <a href="#networking">Fundamentals</a>
+        <a href="#networking">Advanced Topics</a>
+        <a href="#networking">Network Architectures</a>
+        <a href="#networking">Network Models</a>
+        <a href="#networking">Network Protocols</a>
+        <a href="#networking">Network Devices</a>
+        <a href="#networking">IP Addressing</a>
+        <a href="#networking">DNS and DHCP</a>
+        <a href="#networking">Network Topology</a>
+        <a href="#networking">LAN and WAN</a>
+        <a href="#networking">Basic Troubleshooting</a>
+      </div>
     </div>
+    <div class="dropdown">
+      <a href="#linux">Linux</a>
+      <div class="dropdown-content">
+        <a href="#linux">System Basics</a>
+        <a href="#linux">Command Line Proficiency</a>
+        <a href="#linux">Security</a>
+        <a href="#linux">Software Management</a>
+        <a href="#linux">Troubleshooting</a>
+        <a href="#linux">File System and Management</a>
+        <a href="#linux">User and Group Management</a>
+        <a href="#linux">Networking</a>
+        <a href="#linux">System Diagnostics</a>
+        <a href="#linux">Log Analysis</a>
+        <a href="#linux">Shell Scripting</a>
+        <a href="#linux">Security Best Practices</a>
+        <a href="#linux">User Security</a>
+        <a href="#linux">Package Management</a>
+        <a href="#linux">System Updates</a>
+        <a href="#linux">Problem Identification</a>
+        <a href="#linux">Support Communication</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#support">IT Support</a>
+      <div class="dropdown-content">
+        <a href="#support">Ticketing Systems</a>
+        <a href="#support">Remote Monitoring and Management (RMM)</a>
+        <a href="#support">Network Monitoring Tools</a>
+        <a href="#support">Knowledge Base Software</a>
+        <a href="#support">Asset Management Tools</a>
+        <a href="#support">Patch Management Tools</a>
+        <a href="#support">Endpoint Security Solutions</a>
+        <a href="#support">Backup and Recovery Tools</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#windows">Windows Admin</a>
+      <div class="dropdown-content">
+        <a href="#windows">User Management</a>
+        <a href="#windows">Group Policy</a>
+        <a href="#windows">Network Configuration</a>
+        <a href="#windows">Security</a>
+        <a href="#windows">Troubleshooting</a>
+        <a href="#windows">Backup and Recovery</a>
+        <a href="#windows">Software Installation</a>
+        <a href="#windows">Scripting</a>
+        <a href="#windows">Performance Monitoring</a>
+        <a href="#windows">Cloud Computing</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#contact">Contact</a>
+      <div class="dropdown-content">
+        <a href="#contact">Email</a>
+        <a href="#contact">LinkedIn</a>
+        <a href="#contact">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Content remains unchanged -->
+  </main>
+
+  <footer id="contact">
+    <p>&copy; 2025 TechTuts. Learn Simply. Learn Smart.</p>
+  </footer>
 </body>
 </html>
